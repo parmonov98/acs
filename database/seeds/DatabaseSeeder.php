@@ -8,6 +8,14 @@ use AppealsTableSeeder;
 use PasswordResetsTableSeeder;
 use ProfilesTableSeeder;
 use FailedJobsTableSeeder;
+use AppealTypesTableSeeder;
+use DistrictsTableSeeder;
+use EmployeesTableSeeder;
+use QuartersTableSeeder;
+use RegionsTableSeeder;
+use MinistriesTableSeeder;
+use OrganizationAppealSystemsTableSeeder;
+use OrganizationsTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +32,13 @@ class DatabaseSeeder extends Seeder
         $this->call(FailedJobsTableSeeder::class);
         $this->call(PasswordResetsTableSeeder::class);
         $this->call(ProfilesTableSeeder::class);
+        $this->call(AppealTypesTableSeeder::class);
+        $this->call(DistrictsTableSeeder::class);
+        $this->call(EmployeesTableSeeder::class);
+        $this->call(MinistriesTableSeeder::class);
+        $this->call(OrganizationAppealSystemsTableSeeder::class);
+        $this->call(OrganizationsTableSeeder::class);
+        $this->call(RegionsTableSeeder::class);
+
     }
 }

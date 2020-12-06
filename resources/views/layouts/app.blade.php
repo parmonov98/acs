@@ -62,6 +62,26 @@
                                     <a class="dropdown-item" href="{{ route('profile') }}">
                                         {{ __('Profil') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('profile.appeals') }}">
+                                        {{ __('Murojaatlarim') }}
+                                    </a>
+
+                                    @can ('isDirector')
+                                    <a class="dropdown-item" href="{{ route('appeals.stats.employees') }}">
+                                        {{ __('Statistika') }}
+                                    </a>
+                                    @endcan
+                                    @can ('isEmployee')
+                                    <a class="dropdown-item" href="{{ route('employee.appeals') }}">
+                                        {{ __('Kelgan murojaatlar') }}
+                                    </a>
+                                    @endcan
+                                    @can ('isOperator')
+                                    <a class="dropdown-item" href="{{ route('organization.appeals') }}">
+                                        {{ __('barcha murojaatlar') }}
+                                    </a>
+                                    @endcan
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -80,6 +100,7 @@
         </nav>
 
         <main class="py-4">
+            @include('inc.messages')
             @yield('content')
         </main>
     </div>

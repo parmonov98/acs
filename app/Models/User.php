@@ -43,4 +43,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class, 'user_id');
     }
+    public function appeals()
+    {
+        return $this->hasMany(Appeal::class, 'user_id');
+    }
 }

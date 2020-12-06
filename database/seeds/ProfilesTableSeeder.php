@@ -19,17 +19,17 @@ class ProfilesTableSeeder extends Seeder
         \DB::table('profiles')->insert(array (
             0 => 
             array (
-                'created_at' => NULL,
-                'father_name' => NULL,
-                'first_name' => NULL,
                 'id' => 1,
-                'last_name' => NULL,
-                'passport_numbers' => NULL,
-                'passport_serial' => NULL,
-                'phone' => NULL,
-                'tg_id' => NULL,
-                'updated_at' => NULL,
                 'user_id' => 1,
+                'tg_id' => NULL,
+                'first_name' => 'Murodd',
+                'last_name' => 'Parmonov',
+                'father_name' => 'xx',
+                'passport_serial' => 'AA',
+                'passport_numbers' => '234242342',
+                'phone' => '+998942638523',
+                'created_at' => NULL,
+                'updated_at' => '2020-12-05 14:44:19',
             ),
         ));
         

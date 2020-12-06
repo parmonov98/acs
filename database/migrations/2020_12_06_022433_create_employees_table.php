@@ -1,10 +1,11 @@
 <?php
 
+use Facade\Ignition\Tabs\Tab;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAppealsTable extends Migration
+class CreateEmployeesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +14,9 @@ class CreateAppealsTable extends Migration
      */
     public function up()
     {
-        Schema::create('appeals', function (Blueprint $table) {
+        Schema::create('employees', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('organization_id');
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('father_name')->nullable();
@@ -23,8 +24,7 @@ class CreateAppealsTable extends Migration
             $table->string('passport_numbers')->nullable();
             $table->string('phone')->nullable();
             $table->timestamps();
-
-            $table->index('user_id');
+            $table->index('organization_id');
         });
     }
 
@@ -35,6 +35,6 @@ class CreateAppealsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('appeals');
+        Schema::dropIfExists('employees');
     }
 }
